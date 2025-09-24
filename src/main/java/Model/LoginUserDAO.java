@@ -4,34 +4,44 @@
  */
 package Model;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  *
  * @author ravin
  */
 public class LoginUserDAO {
-//    
-//    public void addPosition(LoginUser loginuser){
-//        String sql = "INSERT INTO userlog (position,username,password) VALUES (?,?,?)";
-//        
-//        try(Connection conn = DatabaseConnection.connect();
-//                PreparedStatement pstmt = conn.prepareStatement(sql)){
-//            
-//            pstmt.setString(1, loginuser.getPosition());
-//             pstmt.setString(2, loginuser.getUsername());
-//              pstmt.setString(3, loginuser.getPassword());
-//            
-//                int rowInserted = pstmt.executeUpdate();
-//                
-//                if(rowInserted > 0)
-//            
-//        }
-//        catch{
-//            
-//        }
-//            
-//        
-//    }
+    private Connection conn;
+    
+    public LoginUserDAO(){
+        this.conn = DatabaseConnection.connect();
+    }
+    
+    public boolean validateUser(String position, String username, String password)
+    {
+        try{
+            String sql = "SELECT * FROM rollaccess WHERE job_role=? AND username=? AND password=?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, position);
+            stmt.setString(2, username);
+            stmt.setString(3, password);
+           
+            
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            return rs.next();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+        
+    
+    
+    
 }
