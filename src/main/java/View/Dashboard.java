@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Controller.AddUserRoleController;
 
 import Controller.DashboardController;
 import Controller.ItemController;
@@ -29,6 +30,7 @@ import java.sql.DriverManager;
  * @author ravin
  */
 public class Dashboard extends javax.swing.JFrame {
+    private final AddUserRoleController controller = new AddUserRoleController();
 
     /**
      * Creates new form Dashboard
@@ -61,7 +63,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        vposition = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txtusername = new javax.swing.JTextField();
@@ -96,7 +98,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel3.setText("Items in Stock");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Today's Sales");
+        jLabel1.setText("Today's Sale");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -238,7 +240,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Position");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Supervisor", "Cashier" }));
+        vposition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Supervisor", "Cashier" }));
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -270,7 +272,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtusername, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vposition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(89, 89, 89))
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -286,7 +288,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vposition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -593,7 +595,22 @@ private void loadTableDataAsync() {
     }//GEN-LAST:event_btnviewsalesrecActionPerformed
 
     private void btn_createaccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createaccountActionPerformed
+        String position = (String) vposition.getSelectedItem();   
+        String username = txtusername.getText();
+        String password = txtpassword.getText();
         
+        boolean success = controller.addRecord(position, username, password);
+                
+          if(success){
+              JOptionPane.showMessageDialog(this, "Inserted Successfully");
+              
+              vposition .setSelectedIndex(0);
+              txtusername.setText("");
+              txtpassword.setText("");
+          }
+          else{
+              JOptionPane.showMessageDialog(this, "Insert Failed", "Error", JOptionPane.ERROR_MESSAGE);
+          }
     }//GEN-LAST:event_btn_createaccountActionPerformed
 
    public void showReport() {
@@ -670,7 +687,6 @@ String jasper = "C:\\Users\\ravin\\JaspersoftWorkspace\\MyReports\\Blank_A4_2.ja
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -699,5 +715,6 @@ String jasper = "C:\\Users\\ravin\\JaspersoftWorkspace\\MyReports\\Blank_A4_2.ja
     private javax.swing.JTable tblsale;
     private javax.swing.JTextField txtpassword;
     private javax.swing.JTextField txtusername;
+    private javax.swing.JComboBox<String> vposition;
     // End of variables declaration//GEN-END:variables
 }
