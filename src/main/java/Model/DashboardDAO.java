@@ -35,7 +35,7 @@ public class DashboardDAO {
                    
                 );
                 
-                transactionList.add(transaction);
+                transactionList.add(transaction); 
             }
 
         } catch (SQLException e) {
