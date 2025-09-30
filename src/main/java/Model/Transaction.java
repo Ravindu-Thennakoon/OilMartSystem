@@ -19,7 +19,7 @@ public class Transaction {
      
      public Transaction(Date date, String cashierid, double totalAmount, double discount){
         
-         this.date = date;
+               this.date = date;
                this.cashierid = cashierid;
                this.totalAmount = totalAmount;
                this.discount = discount;
