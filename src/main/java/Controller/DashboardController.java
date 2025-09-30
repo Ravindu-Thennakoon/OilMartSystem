@@ -7,6 +7,7 @@ package Controller;
 import Model.DashboardDAO;
 import Model.Item;
 import Model.ItemDAO;
+import Model.ReportModel;
 import Model.Transaction;
 import java.util.List;
 
@@ -18,5 +19,17 @@ public class DashboardController {
       public static List<Transaction> getAllItems() {
         return new DashboardDAO().getAllItems();
     }
+      
+      public static ReportModel getTodayProfit(){
+          return new DashboardDAO().getTodayProfit();
+      }
+      public static ReportModel getMonthlyProfit(){
+          return new DashboardDAO().getMonthlyProfit();
+      }
+      public static ReportModel getWeeklyProfit(){
+          return new DashboardDAO().getWeeklyProfit();
+      }
+   
+      
     
 }

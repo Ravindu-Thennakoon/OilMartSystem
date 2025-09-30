@@ -53,12 +53,13 @@ public class posController {
             String itemName = model.getValueAt(i, 1).toString();
             String category = model.getValueAt(i, 2).toString();
             String vehicleType = model.getValueAt(i, 3).toString();
+             int quantity = Integer.parseInt(model.getValueAt(i, 5).toString());
             double sellingPrice = Double.parseDouble(model.getValueAt(i, 4).toString());
-            int quantity = Integer.parseInt(model.getValueAt(i, 5).toString());
             double total = Double.parseDouble(model.getValueAt(i, 6).toString());
             double itemDiscount = Double.parseDouble(model.getValueAt(i, 7).toString());
+            
 
-            TransactionItem item = new TransactionItem(itemCode, itemName, category, vehicleType, sellingPrice, quantity, total, itemDiscount);
+            TransactionItem item = new TransactionItem(itemCode, itemName, category, vehicleType,quantity, sellingPrice,  total, itemDiscount);
             dao.addTransactionItem(item, transactionId);
         }
 

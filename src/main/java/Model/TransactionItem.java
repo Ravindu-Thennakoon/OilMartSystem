@@ -19,18 +19,16 @@ public class TransactionItem {
    
       
       
-      public TransactionItem(int itemCode, String itemName, String categoryStr, String vehicleTypeStr, double total, int qty, double sellingPrice, double discount)
+      public TransactionItem(int itemCode, String itemName, String categoryStr, String vehicleTypeStr, int qty, double sellingPrice, double total,   double discount)
       {
           this.itemCode = itemCode;
-          this.qty = qty;
           this.itemName = itemName;
-          this.total= total;
-          this.sellingPrice= sellingPrice;
-          this.discount= discount;
           this.category = categoryStr;
           this.vehicleType = vehicleTypeStr;
-          
-          
+          this.qty = qty;
+          this.sellingPrice= sellingPrice;
+          this.total= total; 
+          this.discount= discount;
       }
       
          public String getCategory() {

@@ -141,9 +141,17 @@ public class POS_System extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Item Code", "Item Name", "Volumn", "Item Price", "Quantity", "Price", "Discount"
+                "Item Code", "Item Name", "Category", "Item Price", "Quantity", "Price", "Discount"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(addtocarttable);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -299,7 +307,7 @@ public class POS_System extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 734, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -708,8 +716,8 @@ addtocarttable.setModel(modelX);
     double totalSum = 0;
     double totaldiscount = 0;
     for (int i = 0; i < modelX.getRowCount(); i++) {
-        Object valueObj = modelX.getValueAt(i, 5); // column index 5 = Total
-         Object valueObjj = modelX.getValueAt(i, 6);
+        Object valueObj = modelX.getValueAt(i, 7); // column index 5 = Total
+         Object valueObjj = modelX.getValueAt(i, 8);
         if (valueObj != null || valueObjj != null) {
             totalSum += Double.parseDouble(valueObj.toString());
             totaldiscount += Double.parseDouble(valueObjj.toString());
