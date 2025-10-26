@@ -62,10 +62,16 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         lbl_today_sale = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        lbl_weekProfit = new javax.swing.JPanel();
         lbl_wprofit = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         lbl_mprofit = new javax.swing.JLabel();
+        lbl_yearProfit = new javax.swing.JPanel();
+        lbl_yprofit = new javax.swing.JLabel();
+        lbl_yearProfit1 = new javax.swing.JPanel();
+        lbl_Ysales = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -157,23 +163,23 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        lbl_weekProfit.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_weekProfit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         lbl_wprofit.setText("jLabel17");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout lbl_weekProfitLayout = new javax.swing.GroupLayout(lbl_weekProfit);
+        lbl_weekProfit.setLayout(lbl_weekProfitLayout);
+        lbl_weekProfitLayout.setHorizontalGroup(
+            lbl_weekProfitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbl_weekProfitLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbl_wprofit, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        lbl_weekProfitLayout.setVerticalGroup(
+            lbl_weekProfitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbl_weekProfitLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(lbl_wprofit)
                 .addContainerGap(17, Short.MAX_VALUE))
@@ -200,6 +206,56 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(lbl_mprofit)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
+
+        lbl_yearProfit.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_yearProfit.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        lbl_yprofit.setText("jLabel17");
+
+        javax.swing.GroupLayout lbl_yearProfitLayout = new javax.swing.GroupLayout(lbl_yearProfit);
+        lbl_yearProfit.setLayout(lbl_yearProfitLayout);
+        lbl_yearProfitLayout.setHorizontalGroup(
+            lbl_yearProfitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbl_yearProfitLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_yprofit, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        lbl_yearProfitLayout.setVerticalGroup(
+            lbl_yearProfitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbl_yearProfitLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(lbl_yprofit)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        lbl_yearProfit1.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_yearProfit1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        lbl_Ysales.setText("jLabel17");
+
+        javax.swing.GroupLayout lbl_yearProfit1Layout = new javax.swing.GroupLayout(lbl_yearProfit1);
+        lbl_yearProfit1.setLayout(lbl_yearProfit1Layout);
+        lbl_yearProfit1Layout.setHorizontalGroup(
+            lbl_yearProfit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbl_yearProfit1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_Ysales, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        lbl_yearProfit1Layout.setVerticalGroup(
+            lbl_yearProfit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lbl_yearProfit1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(lbl_Ysales)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setText("Yearly Profit");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setText("Yearly Sales");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -228,12 +284,20 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGap(35, 35, 35)))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 212, Short.MAX_VALUE))
+                        .addComponent(lbl_weekProfit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(lbl_yearProfit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(lbl_yearProfit1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 50, Short.MAX_VALUE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(63, 63, 63)
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel15)
+                        .addGap(74, 74, 74))))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,14 +306,18 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbl_weekProfit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_yearProfit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_yearProfit1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -279,7 +347,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Position");
 
-        vposition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Supervisor", "Cashier" }));
+        vposition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Owner", "Supervisor", "Cashier" }));
 
         jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -530,7 +598,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 893, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -609,24 +677,32 @@ public void loadTableDataAsync() {
     worker.execute();
 }
 public void setIncomeProfit(){
-   ReportModel r = DashboardController.getTodayProfit();   // daily profit (and sales if added)
+ReportModel r = DashboardController.getTodayProfit();   // daily profit (and sales if added)
 ReportModel r1 = DashboardController.getMonthlyProfit();
 ReportModel r2 = DashboardController.getWeeklyProfit();
+ReportModel r3 = DashboardController.getYearProfit();
 
 double profit = (r != null) ? r.getProfit() : 0.0;
 double mprofit = (r1 != null) ? r1.getProfit() : 0.0;
 double wprofit = (r2 != null) ? r2.getProfit() : 0.0;
  double dsales = (r != null) ? r.getDailySales() : 0.0;  // if you add dailySales
+ double yprofit = (r3 != null) ? r3.getYearProfit() :0.0;
+ double ysales = (r3 != null) ? r3.getYearSales() : 0.0;
 
 String formattedProfit = String.format("%.2f", profit);
 String formattedmProfit = String.format("%.2f", mprofit);
 String formattedwProfit = String.format("%.2f", wprofit);
  String formattedDailySales = String.format("%.2f", dsales);
-
+ String formattedYearProfit = String.format("%.2f", yprofit);
+  String formattedYearSales = String.format("%.2f", ysales);
+ 
+ 
 lbl_today_profit.setText(formattedProfit);
 lbl_mprofit.setText(formattedmProfit);
 lbl_wprofit.setText(formattedwProfit);
  lbl_today_sale.setText(formattedDailySales);
+ lbl_Ysales.setText(formattedYearSales);
+ lbl_yprofit.setText(formattedYearProfit);
 }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -746,6 +822,8 @@ String jasper = "C:\\Users\\ravin\\JaspersoftWorkspace\\MyReports\\Blank_A4_2.ja
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -760,16 +838,20 @@ String jasper = "C:\\Users\\ravin\\JaspersoftWorkspace\\MyReports\\Blank_A4_2.ja
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_Ysales;
     private javax.swing.JLabel lbl_mprofit;
     private javax.swing.JLabel lbl_today_profit;
     private javax.swing.JLabel lbl_today_sale;
+    private javax.swing.JPanel lbl_weekProfit;
     private javax.swing.JLabel lbl_wprofit;
+    private javax.swing.JPanel lbl_yearProfit;
+    private javax.swing.JPanel lbl_yearProfit1;
+    private javax.swing.JLabel lbl_yprofit;
     private javax.swing.JTable tblsale;
     private javax.swing.JTextField txtpassword;
     private javax.swing.JTextField txtusername;

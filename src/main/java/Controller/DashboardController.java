@@ -29,6 +29,9 @@ public class DashboardController {
       public static ReportModel getWeeklyProfit(){
           return new DashboardDAO().getWeeklyProfit();
       }
+      public static ReportModel getYearProfit(){
+          return new DashboardDAO().getYearProfit();
+      }
    
       
     
