@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class ReportModel {
     private Date reportDate;
-    private double profit, dailySales;
+    private double profit, dailySales, yearSales, yearProfit;
     private int month,year;
     private String week;
     
@@ -31,6 +31,12 @@ public class ReportModel {
         this.week = week;
         this.profit = profit;     
     }
+    public ReportModel(int year, double yearSales, double yearProfit){
+        this.year = year;
+        this.yearSales = yearSales;
+        this.yearProfit = yearProfit;
+    }
+    
     
     public Date getReportDate(){
         return reportDate;
@@ -52,4 +58,10 @@ public class ReportModel {
     public String getWeek(){
         return week;
     } 
+    public double getYearSales(){
+        return yearSales;
+    }
+    public double getYearProfit(){
+        return yearProfit;
+    }
 }

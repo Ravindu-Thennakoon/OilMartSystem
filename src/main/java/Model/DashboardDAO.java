@@ -152,4 +152,34 @@ public class DashboardDAO {
         }
         return null;
     }
+    public ReportModel getYearProfit(){
+        String sql = """
+                     SELECT YEAR(t.date_time) AS transaction_year,
+                     SUM(t.total_amount) AS yearlySales,
+                     SUM((ti.sellingPrice - i.cost_price) * ti.quantity) AS yearlyProfit
+                     FROM tbl_transaction t
+                     JOIN transaction_items ti ON t.transaction_id = ti.transaction_id
+                     JOIN item i ON ti.item_code = i.item_code
+                     WHERE YEAR(t.date_time) = YEAR(CURDATE())
+                     GROUP BY YEAR(t.date_time);
+                     """;
+        
+        try(Connection conn = DatabaseConnection.connect();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql)){
+            
+            while (rs.next()){
+                int year = rs.getInt("transaction_year");
+                double yearlySales = rs.getDouble("yearlySales");
+                double yearlyProfit = rs.getDouble("yearlyProfit");
+                
+                return new ReportModel(year, yearlySales, yearlyProfit);
+            }
+        }
+        catch(SQLException e){ 
+            e.printStackTrace();
+        }
+        return null;
+        
+    }
 }

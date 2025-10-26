@@ -13,16 +13,12 @@ import java.awt.event.*;
 import java.util.List;
 import Model.Item;
 
-
-
-
-
 /**
  *
  * @author ravin
  */
 public class Inventory_Manage extends javax.swing.JFrame {
-    private JPopupMenu suggestionsPopup = new JPopupMenu();
+private JPopupMenu suggestionsPopup = new JPopupMenu();
 private ItemDAO itemDAO = new ItemDAO();
 
 
@@ -33,7 +29,7 @@ private ItemDAO itemDAO = new ItemDAO();
     public Inventory_Manage() {
      
         initComponents();
-       this.setExtendedState(Inventory_Manage.MAXIMIZED_BOTH); // Maximize window
+        this.setExtendedState(Inventory_Manage.MAXIMIZED_BOTH); // Maximize window
         this.setVisible(true);
         loadTableDataAsync();
         updateCount();
@@ -79,17 +75,13 @@ private void searchKey()
     public void keyReleased(KeyEvent e) {
         filterItems();
     }
-  
-
+    
 };
-          txtSearch.addKeyListener(searchKeyListener);
+txtSearch.addKeyListener(searchKeyListener);
 txtVehicle.addKeyListener(searchKeyListener);
 txtVolumn.addKeyListener(searchKeyListener); 
 }
   /*------------------------------------------------------------*/
-
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -474,7 +466,7 @@ private void populateTable(List<Item> items) {
 
   /*------------------------------------------------------------*/
     private void btn_insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insertActionPerformed
-        DefaultTableModel model = (DefaultTableModel) table_inventory.getModel();
+    DefaultTableModel model = (DefaultTableModel) table_inventory.getModel();
 
     int nextCode = ItemController.getNextItemCode(); // fetch from DB
 
@@ -486,7 +478,7 @@ private void populateTable(List<Item> items) {
     }//GEN-LAST:event_btn_insertActionPerformed
   /*------------------------------------------------------------*/
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
-     DefaultTableModel model = (DefaultTableModel) table_inventory.getModel();
+    DefaultTableModel model = (DefaultTableModel) table_inventory.getModel();
     int row = table_inventory.getSelectedRow();
 
     if (row == -1) {
@@ -550,8 +542,7 @@ private void populateTable(List<Item> items) {
     // Refresh table
     loadTableDataAsync();
      updateCount();
-    
-    
+     
     }//GEN-LAST:event_btn_saveActionPerformed
   /*------------------------------------------------------------*/
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -685,8 +676,7 @@ private void populateTable(List<Item> items) {
     worker.execute();
 }
   /*------------------------------------------------------------*/
-
-
+    
     /**
      * @param args the command line arguments
      */
